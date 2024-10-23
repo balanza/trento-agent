@@ -221,7 +221,8 @@ jobs:
           rm -v $OSC_CHECKOUT_DIR/*.tar.gz
           pushd $OSC_CHECKOUT_DIR
           osc service manualrun
-          cp /__w/agent/agent/vendor.tar.gz .
+          popd
+          cp vendor.tar.gz $OSC_CHECKOUT_DIR
       - name: prepare trento-agent.changes file
         # The .changes file is updated only in release creation. This current task should be improved
         # in order to add the current rolling release notes
